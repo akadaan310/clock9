@@ -1,0 +1,275 @@
+{
+ "divergentPrompts": [
+  [
+   "humaneval:HumanEval/1",
+   [
+    "1.5b-draft0.5b-n3",
+    "1.5b-draft0.5b-n8"
+   ]
+  ],
+  [
+   "humaneval:HumanEval/6",
+   [
+    "1.5b-draft0.5b-n3",
+    "1.5b-draft0.5b-n8",
+    "1.5b-ngram-simple-n4m16",
+    "1.5b-ngram-mod"
+   ]
+  ],
+  [
+   "humaneval:HumanEval/8",
+   [
+    "1.5b-draft0.5b-n3",
+    "1.5b-draft0.5b-n8",
+    "1.5b-ngram-simple-n4m16",
+    "1.5b-ngram-mod"
+   ]
+  ],
+  [
+   "humaneval:HumanEval/10",
+   [
+    "1.5b-draft0.5b-n3",
+    "1.5b-draft0.5b-n8"
+   ]
+  ],
+  [
+   "humaneval:HumanEval/19",
+   [
+    "1.5b-draft0.5b-n3",
+    "1.5b-draft0.5b-n8"
+   ]
+  ]
+ ],
+ "runs": [
+  {
+   "variant": "plain-rerun",
+   "key": "humaneval:HumanEval/1",
+   "equalsOriginalPlain": true,
+   "firstDiffChar": null,
+   "baseLen": 910,
+   "specDiffs": [
+    {
+     "config": "1.5b-draft0.5b-n3",
+     "firstDiffChar": 552,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-draft0.5b-n8",
+     "firstDiffChar": 552,
+     "equalsThisRun": false
+    }
+   ]
+  },
+  {
+   "variant": "plain-rerun",
+   "key": "humaneval:HumanEval/6",
+   "equalsOriginalPlain": true,
+   "firstDiffChar": null,
+   "baseLen": 869,
+   "specDiffs": [
+    {
+     "config": "1.5b-draft0.5b-n3",
+     "firstDiffChar": 787,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-draft0.5b-n8",
+     "firstDiffChar": 787,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-ngram-simple-n4m16",
+     "firstDiffChar": 787,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-ngram-mod",
+     "firstDiffChar": 787,
+     "equalsThisRun": false
+    }
+   ]
+  },
+  {
+   "variant": "plain-rerun",
+   "key": "humaneval:HumanEval/8",
+   "equalsOriginalPlain": true,
+   "firstDiffChar": null,
+   "baseLen": 585,
+   "specDiffs": [
+    {
+     "config": "1.5b-draft0.5b-n3",
+     "firstDiffChar": 491,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-draft0.5b-n8",
+     "firstDiffChar": 491,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-ngram-simple-n4m16",
+     "firstDiffChar": 491,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-ngram-mod",
+     "firstDiffChar": 555,
+     "equalsThisRun": false
+    }
+   ]
+  },
+  {
+   "variant": "plain-rerun",
+   "key": "humaneval:HumanEval/10",
+   "equalsOriginalPlain": true,
+   "firstDiffChar": null,
+   "baseLen": 970,
+   "specDiffs": [
+    {
+     "config": "1.5b-draft0.5b-n3",
+     "firstDiffChar": 702,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-draft0.5b-n8",
+     "firstDiffChar": 702,
+     "equalsThisRun": false
+    }
+   ]
+  },
+  {
+   "variant": "plain-rerun",
+   "key": "humaneval:HumanEval/19",
+   "equalsOriginalPlain": true,
+   "firstDiffChar": null,
+   "baseLen": 948,
+   "specDiffs": [
+    {
+     "config": "1.5b-draft0.5b-n3",
+     "firstDiffChar": 798,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-draft0.5b-n8",
+     "firstDiffChar": 798,
+     "equalsThisRun": false
+    }
+   ]
+  },
+  {
+   "variant": "plain-ubatch16",
+   "key": "humaneval:HumanEval/1",
+   "equalsOriginalPlain": true,
+   "firstDiffChar": null,
+   "baseLen": 910,
+   "specDiffs": [
+    {
+     "config": "1.5b-draft0.5b-n3",
+     "firstDiffChar": 552,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-draft0.5b-n8",
+     "firstDiffChar": 552,
+     "equalsThisRun": false
+    }
+   ]
+  },
+  {
+   "variant": "plain-ubatch16",
+   "key": "humaneval:HumanEval/6",
+   "equalsOriginalPlain": false,
+   "firstDiffChar": 787,
+   "baseLen": 869,
+   "specDiffs": [
+    {
+     "config": "1.5b-draft0.5b-n3",
+     "firstDiffChar": 787,
+     "equalsThisRun": true
+    },
+    {
+     "config": "1.5b-draft0.5b-n8",
+     "firstDiffChar": 787,
+     "equalsThisRun": true
+    },
+    {
+     "config": "1.5b-ngram-simple-n4m16",
+     "firstDiffChar": 787,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-ngram-mod",
+     "firstDiffChar": 787,
+     "equalsThisRun": true
+    }
+   ]
+  },
+  {
+   "variant": "plain-ubatch16",
+   "key": "humaneval:HumanEval/8",
+   "equalsOriginalPlain": false,
+   "firstDiffChar": 491,
+   "baseLen": 585,
+   "specDiffs": [
+    {
+     "config": "1.5b-draft0.5b-n3",
+     "firstDiffChar": 491,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-draft0.5b-n8",
+     "firstDiffChar": 491,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-ngram-simple-n4m16",
+     "firstDiffChar": 491,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-ngram-mod",
+     "firstDiffChar": 555,
+     "equalsThisRun": false
+    }
+   ]
+  },
+  {
+   "variant": "plain-ubatch16",
+   "key": "humaneval:HumanEval/10",
+   "equalsOriginalPlain": false,
+   "firstDiffChar": 702,
+   "baseLen": 970,
+   "specDiffs": [
+    {
+     "config": "1.5b-draft0.5b-n3",
+     "firstDiffChar": 702,
+     "equalsThisRun": true
+    },
+    {
+     "config": "1.5b-draft0.5b-n8",
+     "firstDiffChar": 702,
+     "equalsThisRun": true
+    }
+   ]
+  },
+  {
+   "variant": "plain-ubatch16",
+   "key": "humaneval:HumanEval/19",
+   "equalsOriginalPlain": true,
+   "firstDiffChar": null,
+   "baseLen": 948,
+   "specDiffs": [
+    {
+     "config": "1.5b-draft0.5b-n3",
+     "firstDiffChar": 798,
+     "equalsThisRun": false
+    },
+    {
+     "config": "1.5b-draft0.5b-n8",
+     "firstDiffChar": 798,
+     "equalsThisRun": false
+    }
+   ]
+  }
+ ]
+}

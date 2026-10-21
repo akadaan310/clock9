@@ -21,6 +21,7 @@ import path from 'node:path';
 import { LlamaServer, MODELS } from './llama.js';
 import { PythonSandbox } from './executor.js';
 import { loadHumanEval, loadListOps, trainPairs, ROOT, type ListOpsTask, type HumanEvalTask } from './tasks.js';
+import { heUser, heProgram, heVisibleProgram } from './humaneval.js';
 import { HybridSolver, extractCode, pythonUserPrompt, type SolveResult } from '../src/solver.js';
 import type { CompletionRequest, ModelAdapter } from '../src/neural/adapter.js';
 
@@ -76,37 +77,6 @@ async function scoreListOps(t: ListOpsTask, code: string | null) {
   if (!code) return { pass: false, detail: 'no answer' };
   const r = await sandbox.run(code, t.hidden);
   return { pass: r.pass, detail: `${r.passed}/${r.total}${r.error ? ' ' + r.error : ''}` };
-}
-
-// ------------------------------------------------------------ HumanEval helpers
-const heUser = (t: HumanEvalTask) => `Complete the following Python function. Reply with a single \`\`\`python code block containing the complete function.\n\n\`\`\`python\n${t.prompt}\`\`\``;
-function heProgram(t: HumanEvalTask, code: string): string {
-  const header = t.prompt.split('\n').filter(l => /^(from|import)\s/.test(l)).join('\n');
-  const body = new RegExp(`def\\s+${t.entry_point}\\s*\\(`).test(code) ? `${header}\n${code}` : `${t.prompt}${code}`;
-  return body;
-}
-/** Visible checks = examples written in the prompt's docstring (doctest `>>>` or `f(..) == / ➞ / => x`). */
-export function heVisible(t: HumanEvalTask): { expr: string; want: string }[] {
-  const out: { expr: string; want: string }[] = [];
-  const lines = t.prompt.split('\n');
-  for (let i = 0; i < lines.length; i++) {
-    const L = lines[i]!.trim();
-    const d = /^>>>\s*(.+)$/.exec(L);
-    if (d && lines[i + 1] !== undefined) {
-      const w = lines[i + 1]!.trim();
-      if (w && !w.startsWith('>>>')) out.push({ expr: d[1]!, want: w });
-      continue;
-    }
-    const e = new RegExp(`(${t.entry_point}\\(.*\\))\\s*(?:==|➞|=>|->|returns|should return|==>)\\s*(.+?)\\s*$`).exec(L);
-    if (e) out.push({ expr: e[1]!, want: e[2]!.replace(/[.,;]$/, '') });
-  }
-  return out;
-}
-function heVisibleProgram(t: HumanEvalTask, code: string): string | null {
-  const v = heVisible(t);
-  if (!v.length) return null;
-  const checks = v.map(x => `(lambda: (${x.expr}), lambda: (${x.want}))`).join(',\n    ');
-  return `${heProgram(t, code)}\n\nimport sys as __s\n__n = __ok = 0\nfor __e, __w in [\n    ${checks}\n]:\n    try:\n        __wv = __w()\n    except Exception:\n        continue\n    __n += 1\n    try:\n        __ok += (__e() == __wv)\n    except Exception:\n        pass\nif __n == 0:\n    print('NOEVIDENCE', file=__s.stderr); __s.exit(3)\nassert __ok == __n, f'{__ok}/{__n} visible'\n`;
 }
 
 // ------------------------------------------------------------ runners

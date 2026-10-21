@@ -149,6 +149,7 @@ check(candidates('Given a list of integers xs, negate each number, then negate e
   check(ev.ok && ev.sentences[1]!.provenance.domain === 'everyday', 'text: explicit domain selects that sense');
   const cam = gen.generate('What is an image in a camera photograph picture?');
   check(cam.ok && cam.sentences[1]!.provenance.domain === 'everyday', `text: n-gram context disambiguates the domain (${cam.sentences[1]?.provenance.domain})`);
+  check(gen.generate('What does image mean in the acoustic sense?').refusal === 'no_sense_in_domain', 'text: demanded domain without a sense is refused');
   check(gen.generate('Define flibbertigibbet').refusal === 'unknown_term', 'text: unknown term refused, not invented');
   check(gen.generate('Given a list of integers xs, return the sum.').refusal === 'not_a_text_request', 'text: code request is not answered with text');
   const house = snap.terms.find(t => t.senses.length === 1 && t.senses[0]!.status === 'house')!;

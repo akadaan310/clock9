@@ -74,13 +74,14 @@ export class GlossaryGenerator {
     if (!terms.length) return this.result(false, 'unknown_term', [], [...d, 'T: no glossary term found (refuse rather than invent)']);
     const t = terms[0]!;
     d.push(`T -> ${t.id}`);
-    const domMatch = /\bin (?:the )?([a-z &]+?)(?: sense| domain| division)?\??$/i.exec(req);
+    const domMatch = /\bin (?:the )?([a-z &]+?)( sense| domain| division)?\??$/i.exec(req);
     let sense: Sense | undefined;
     if (domMatch && !relate) {
       const want = domMatch[1]!.toLowerCase().trim();
       const hit = t.senses.find(s => s.domain === want || s.domainLabel.toLowerCase().includes(want));
       if (hit) { sense = hit; d.push(`D -> ${hit.domain} (explicit)`); }
-      else if (!terms.slice(1).length) return this.result(false, 'no_sense_in_domain', [], [...d, `D: "${want}" not among ${t.senses.map(s => s.domain).join(',')}`]);
+      // Refuse only when a sense/domain was explicitly demanded; otherwise the words are context.
+      else if (domMatch[2]) return this.result(false, 'no_sense_in_domain', [], [...d, `D: "${want}" not among ${t.senses.map(s => s.domain).join(',')}`]);
     }
     if (!sense) {
       const ctx = words(req).filter(w => !t.term.toLowerCase().split(/\s+/).includes(w) && !['define', 'what', 'does', 'mean', 'explain', 'related', 'meaning'].includes(w));

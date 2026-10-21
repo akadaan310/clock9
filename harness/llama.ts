@@ -36,7 +36,7 @@ export class LlamaServer implements ModelAdapter {
     this.proc.stdout!.on('data', d => (this.log += d));
     this.proc.stderr!.on('data', d => (this.log += d));
     for (;;) {
-      if (this.proc.exitCode !== null) throw Error(`llama-server exited: ${this.log.slice(-800)}`);
+      if (this.proc.exitCode !== null || this.proc.signalCode !== null) throw Error(`llama-server exited (${this.proc.exitCode ?? this.proc.signalCode}): ${this.log.slice(-800)}`);
       try {
         const r = await fetch(`http://127.0.0.1:${this.cfg.port}/health`);
         if (r.ok) break;

@@ -1,0 +1,1 @@
+{"arm":"B0","n":140,"passRate":0.814,"perSplit":{"id":"40/40","para":"39/40","oog":"0/20","blind":"35/40"},"refused":25,"falseAccept":1,"resolvedBy":{"grammar":115,"refused":25},"wallMs":{"mean":75.5,"p50":88,"p95":109.7,"total":10563},"modelCalls":0,"genTokens":0,"promptTokens":0,"modelCpuSec":0} (21 s)
