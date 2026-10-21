@@ -1,0 +1,1988 @@
+{
+ "commit": "6a0f5eaa8dd39b58bdd99889721ecea5f54e62bb",
+ "source": "https://github.com/akadaan310/abedkadaancom/blob/6a0f5eaa8dd39b58bdd99889721ecea5f54e62bb/src/content/glossary.ts",
+ "terms": [
+  {
+   "id": "image",
+   "line": 54,
+   "related": [
+    "kernel",
+    "preimage",
+    "projection",
+    "rank",
+    "Imagistratum"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "The set of outputs a map can reach: im f = {f(x)}. For a matrix, its column space.",
+     "topic": "image-kernel"
+    },
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "house",
+     "text": "For c ↦ b·c, the image is the set of a for which a / b has at least one answer. 1/0 fails because 1 ∉ im(c ↦ 0·c).",
+     "topic": "numerical-grammars"
+    },
+    {
+     "domain": "everyday",
+     "domainLabel": "Everyday usage",
+     "status": "established",
+     "text": "A picture or photograph: in mathematical terms, the image of a scene under a camera map, then sampled into pixels.",
+     "topic": "computational-photography"
+    },
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "established",
+     "text": "A sky chart is the image of the celestial sphere under a projection onto the page or screen; the zenith map has the whole sky as its image.",
+     "topic": "celestial-geometry"
+    }
+   ],
+   "term": "image"
+  },
+  {
+   "id": "kernel",
+   "line": 60,
+   "related": [
+    "image",
+    "preimage",
+    "rank",
+    "quotient"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "ker A = {x : Ax = 0}: everything a linear map sends to zero, and so everything it forgets.",
+     "topic": "image-kernel"
+    },
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "house",
+     "text": "For c ↦ b·c, the kernel decides uniqueness: if it is larger than {0}, a / b has many answers or none. 0/0 is a kernel failure.",
+     "topic": "numerical-grammars"
+    },
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "The frequencies a sampling process cannot distinguish from others: aliasing is the sampling map’s kernel at work.",
+     "topic": "sound-signals"
+    },
+    {
+     "domain": "everyday",
+     "domainLabel": "Everyday usage",
+     "status": "established",
+     "text": "In image processing, a “kernel” is also the small matrix of weights in a convolution filter. That is a different, unrelated sense.",
+     "topic": "computational-photography"
+    }
+   ],
+   "term": "kernel"
+  },
+  {
+   "id": "preimage",
+   "line": 66,
+   "related": [
+    "image",
+    "kernel"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "f⁻¹(y) = {x : f(x) = y}. For a linear map: empty, one point, or x₀ + ker A.",
+     "topic": "image-kernel"
+    },
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "established",
+     "text": "The preimage of one pixel of a sky photograph is a ray: every star along that line of sight.",
+     "topic": "projective-camera"
+    }
+   ],
+   "term": "preimage"
+  },
+  {
+   "id": "projection",
+   "line": 70,
+   "related": [
+    "image",
+    "kernel",
+    "chart",
+    "substrate"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "A linear map P with P² = P; its kernel is what it forgets.",
+     "topic": "rank-nullity"
+    },
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "established",
+     "text": "A map projection: a chart from the sphere to the plane, with declared distortions.",
+     "topic": "chart-correspondences"
+    },
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "house",
+     "text": "In SubstrateIO, a map from a state space to a representation space, studied for what it preserves and identifies.",
+     "topic": "substrate-theory"
+    }
+   ],
+   "term": "projection"
+  },
+  {
+   "id": "rank",
+   "line": 75,
+   "related": [
+    "image",
+    "kernel"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "dim im A: the number of independent directions that survive a linear map.",
+     "topic": "rank-nullity"
+    },
+    {
+     "domain": "everyday",
+     "domainLabel": "Everyday usage",
+     "status": "established",
+     "text": "A position in an ordering. PageRank (CGT Chapters 15–16) is a ranking computed from a stationary distribution, not a matrix rank.",
+     "topic": null
+    }
+   ],
+   "term": "rank"
+  },
+  {
+   "id": "Imagistratum",
+   "line": 79,
+   "related": [
+    "image",
+    "kernel",
+    "projection"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "house",
+     "text": "The layered record of images and growing kernels along a chain of maps.",
+     "topic": "imagistratum"
+    }
+   ],
+   "term": "Imagistratum"
+  },
+  {
+   "id": "grammar",
+   "line": 80,
+   "related": [
+    "word",
+    "admissibility",
+    "derivation",
+    "parser"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "A finite set of rewriting rules generating a language (Chomsky).",
+     "topic": "generative-grammars"
+    },
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "house",
+     "text": "An operational grammar G = (Σ, 𝔄, ⟦·⟧, ℒ): the moves a structure admits, with their meaning and an admissibility language.",
+     "topic": "operational-grammar"
+    },
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "house",
+     "text": "In Phonogrammatica, rules for how acoustic events may follow and overlap.",
+     "topic": "phonogrammatica"
+    },
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "house",
+     "text": "The lexical grammar from which campus residents compose their lines.",
+     "topic": "agent-grammars"
+    }
+   ],
+   "term": "grammar"
+  },
+  {
+   "id": "word",
+   "line": 86,
+   "related": [
+    "alphabet",
+    "monoid",
+    "path"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "A finite sequence of letters; the elements of the free monoid Σ*.",
+     "topic": "alphabets-words"
+    },
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "house",
+     "text": "An operation expression: a sequence of moves to be checked and resolved.",
+     "topic": "operational-grammar"
+    },
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "house",
+     "text": "A path word: the sequence of quantized turns along a street.",
+     "topic": "curvature"
+    }
+   ],
+   "term": "word"
+  },
+  {
+   "id": "fold",
+   "line": 91,
+   "related": [
+    "Plicastratum",
+    "recursion",
+    "grammar"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "house",
+     "text": "Plicastratum fold: replace a repeated digram by a new glyph and record the rule. Unfold reverses it exactly.",
+     "topic": "plicastratum"
+    },
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "Functional-programming fold (catamorphism): consume a list by replacing its constructors with a function and a value.",
+     "topic": "recursive-folds"
+    },
+    {
+     "domain": "everyday",
+     "domainLabel": "Everyday usage",
+     "status": "established",
+     "text": "A crease: bending a surface onto itself. Paper folding preserves lengths; Plicastratum folding preserves the word.",
+     "topic": null
+    }
+   ],
+   "term": "fold"
+  },
+  {
+   "id": "Plicastratum",
+   "line": 96,
+   "related": [
+    "fold",
+    "alphabet tower"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "house",
+     "text": "The stratified sequence of words and rules produced by successive folds.",
+     "topic": "plicastratum"
+    }
+   ],
+   "term": "Plicastratum"
+  },
+  {
+   "id": "address",
+   "line": 97,
+   "related": [
+    "numeral",
+    "operation",
+    "channel"
+   ],
+   "senses": [
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "established",
+     "text": "A URI: a word in the RFC 3986 grammar locating a resource.",
+     "topic": "uri-grammar"
+    },
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "house",
+     "text": "A grammatical address: the shortlex-least move word reaching an element from a root (CGT-DEF-006).",
+     "topic": "addressable-forms"
+    },
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "established",
+     "text": "A postal address, which a geocoder may turn into approximate coordinates (with stated provider and precision).",
+     "topic": null
+    }
+   ],
+   "term": "address"
+  },
+  {
+   "id": "transition",
+   "line": 102,
+   "related": [
+    "state",
+    "run",
+    "machine"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "A labelled step s —a→ t of a transition system.",
+     "topic": "transition-systems"
+    },
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "house",
+     "text": "In SubstrateIO, a state transformation whose trace is recorded and projected.",
+     "topic": "substrate-theory"
+    },
+    {
+     "domain": "campus",
+     "domainLabel": "Campus (the university itself)",
+     "status": "mythology",
+     "text": "A scene transition: the camera’s move between campus locations, with optional sound damping.",
+     "topic": null
+    }
+   ],
+   "term": "transition"
+  },
+  {
+   "id": "state",
+   "line": 107,
+   "related": [
+    "transition",
+    "machine"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "An element of a transition system’s state set.",
+     "topic": "transition-systems"
+    },
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "established",
+     "text": "The current node of a typed machine, which determines which operations are admissible.",
+     "topic": "typed-machines"
+    }
+   ],
+   "term": "state"
+  },
+  {
+   "id": "path",
+   "line": 111,
+   "related": [
+    "word",
+    "graph",
+    "signature",
+    "topology"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "A walk with no repeated vertex.",
+     "topic": "graph-theory"
+    },
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "established",
+     "text": "A street path: a polyline from map data, read as a word of turns.",
+     "topic": "curvature"
+    },
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "A continuous map [0, 1] → X; two with the same ends may or may not be homotopic.",
+     "topic": "topology"
+    }
+   ],
+   "term": "path"
+  },
+  {
+   "id": "signature",
+   "line": 116,
+   "related": [
+    "path",
+    "word"
+   ],
+   "senses": [
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "house",
+     "text": "A path signature: turn word, relative segment lengths and junction degrees of a street path.",
+     "topic": "curvature"
+    },
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "A move signature: the alphabet Σ of an operational grammar.",
+     "topic": "operational-grammar"
+    },
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "established",
+     "text": "A type signature: the argument and result types of an operation.",
+     "topic": "types-as-admissibility"
+    }
+   ],
+   "term": "signature"
+  },
+  {
+   "id": "orbit",
+   "line": 121,
+   "related": [
+    "interval",
+    "generator",
+    "closure"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "The pitch classes visited by repeatedly stepping by one interval; 12 / gcd(12, k) of them.",
+     "topic": "interval-geometry"
+    },
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "The set {gⁿ·x} reached by a group element acting repeatedly: the closure of a seed under one relation.",
+     "topic": "relational-generativity"
+    },
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "established",
+     "text": "The path of a body around another under gravity. Unrelated to the group-theory sense except in name.",
+     "topic": null
+    }
+   ],
+   "term": "orbit"
+  },
+  {
+   "id": "interval",
+   "line": 126,
+   "related": [
+    "pitch",
+    "orbit",
+    "ratio"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "The distance between two pitches: a frequency ratio, or k semitones in ℤ/12.",
+     "topic": "interval-geometry"
+    },
+    {
+     "domain": "everyday",
+     "domainLabel": "Everyday usage",
+     "status": "established",
+     "text": "A set of real numbers between two endpoints, such as [0, 1].",
+     "topic": null
+    }
+   ],
+   "term": "interval"
+  },
+  {
+   "id": "phase",
+   "line": 130,
+   "related": [
+    "signal",
+    "interval"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "Where in its cycle a sinusoid is: an element of ℝ/2πℤ.",
+     "topic": "phase"
+    },
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "established",
+     "text": "The Moon’s phase: its ecliptic longitude minus the Sun’s, 0° new, 180° full.",
+     "topic": null
+    }
+   ],
+   "term": "phase"
+  },
+  {
+   "id": "frame",
+   "line": 134,
+   "related": [
+    "tensor",
+    "zenith"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "A choice of basis and origin; coordinates are relative to it.",
+     "topic": "spatial-tensors"
+    },
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "established",
+     "text": "A celestial reference frame: J2000 equatorial, equator of date, or the observer’s horizon.",
+     "topic": "celestial-geometry"
+    },
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "One window of samples in a short-time Fourier transform.",
+     "topic": "time-frequency"
+    }
+   ],
+   "term": "frame"
+  },
+  {
+   "id": "chart",
+   "line": 139,
+   "related": [
+    "projection",
+    "map"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "A homeomorphism from part of a surface to part of the plane.",
+     "topic": "chart-correspondences"
+    },
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "established",
+     "text": "A star chart: the sky drawn under a declared projection.",
+     "topic": "celestial-geometry"
+    }
+   ],
+   "term": "chart"
+  },
+  {
+   "id": "map",
+   "line": 143,
+   "related": [
+    "chart",
+    "path",
+    "graph"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "A function between sets or spaces.",
+     "topic": "image-kernel"
+    },
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "A world map: a graph of places and weighted routes.",
+     "topic": "maps-navigation"
+    }
+   ],
+   "term": "map"
+  },
+  {
+   "id": "constellation",
+   "line": 147,
+   "related": [
+    "portal",
+    "zenith"
+   ],
+   "senses": [
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "established",
+     "text": "One of the 88 IAU regions of the sky. Real, conventional, and not computed here.",
+     "topic": "celestial-geometry"
+    },
+    {
+     "domain": "campus",
+     "domainLabel": "Campus (the university itself)",
+     "status": "mythology",
+     "text": "A campus constellation: an authored line drawn between real stars to mark a computed correspondence (for example, the zenith stars of two linked places). It is fiction drawn on real positions.",
+     "topic": null
+    }
+   ],
+   "term": "constellation"
+  },
+  {
+   "id": "portal",
+   "line": 151,
+   "related": [
+    "constellation",
+    "path",
+    "topology"
+   ],
+   "senses": [
+    {
+     "domain": "campus",
+     "domainLabel": "Campus (the university itself)",
+     "status": "mythology",
+     "text": "A fictional doorway in the courtyard that appears when two path signatures correspond. It visualizes a computation; it is not a claim of physical connection.",
+     "topic": "topology"
+    }
+   ],
+   "term": "portal"
+  },
+  {
+   "id": "zenith",
+   "line": 154,
+   "related": [
+    "frame",
+    "constellation"
+   ],
+   "senses": [
+    {
+     "domain": "observatory",
+     "domainLabel": "The Observatory",
+     "status": "established",
+     "text": "The point straight overhead: δ = latitude, α = local sidereal time.",
+     "topic": "celestial-geometry"
+    }
+   ],
+   "term": "zenith"
+  },
+  {
+   "id": "Matrix Loom",
+   "line": 155,
+   "related": [
+    "matrix",
+    "compilation",
+    "composition"
+   ],
+   "senses": [
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "house",
+     "text": "An assignment of matrices to operations so that a program weaves into one product.",
+     "topic": "matrix-loom"
+    }
+   ],
+   "term": "Matrix Loom"
+  },
+  {
+   "id": "World Loom",
+   "line": 156,
+   "related": [
+    "rule",
+    "seed",
+    "automaton"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "house",
+     "text": "A world generated row by row by a local rule from a seed, with a reading map to features.",
+     "topic": "world-loom"
+    }
+   ],
+   "term": "World Loom"
+  },
+  {
+   "id": "Ingrammatica",
+   "line": 157,
+   "related": [
+    "admissibility",
+    "grammar"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "house",
+     "text": "The study of the words a grammar rejects, and of their minimal certificates of rejection.",
+     "topic": "ingrammatica"
+    }
+   ],
+   "term": "Ingrammatica"
+  },
+  {
+   "id": "Phonogrammatica",
+   "line": 158,
+   "related": [
+    "grammar",
+    "spectrum"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "house",
+     "text": "An operational grammar of acoustic events on the time–frequency plane.",
+     "topic": "phonogrammatica"
+    }
+   ],
+   "term": "Phonogrammatica"
+  },
+  {
+   "id": "BORNE",
+   "line": 159,
+   "related": [
+    "DAG",
+    "causal"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "house",
+     "text": "Birth dependencies between world facts, forming a DAG.",
+     "topic": "borne"
+    }
+   ],
+   "term": "BORNE"
+  },
+  {
+   "id": "DAG",
+   "line": 160,
+   "related": [
+    "BORNE",
+    "graph"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "A directed acyclic graph; it admits a topological order.",
+     "topic": "borne"
+    }
+   ],
+   "term": "DAG"
+  },
+  {
+   "id": "causal",
+   "line": 161,
+   "related": [
+    "BORNE",
+    "DAG"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "Concerning cause and effect; a causal graph encodes assumptions as a DAG (Pearl).",
+     "topic": "borne"
+    }
+   ],
+   "term": "causal"
+  },
+  {
+   "id": "GLM",
+   "line": 162,
+   "related": [
+    "LGM"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "house",
+     "text": "Gaming Language Model: a language model used inside a game.",
+     "topic": "glm-lgm"
+    }
+   ],
+   "term": "GLM"
+  },
+  {
+   "id": "LGM",
+   "line": 163,
+   "related": [
+    "GLM",
+    "grammar"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "house",
+     "text": "Language Gaming Model: a game whose rules are a grammar.",
+     "topic": "glm-lgm"
+    }
+   ],
+   "term": "LGM"
+  },
+  {
+   "id": "admissibility",
+   "line": 164,
+   "related": [
+    "realizability",
+    "grammar",
+    "Ingrammatica"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "house",
+     "text": "Membership of a word in the admissibility language ℒ, independent of the structure.",
+     "topic": "operational-grammar"
+    },
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "established",
+     "text": "Type-correctness: whether an operation is allowed in the current state or type context.",
+     "topic": "types-as-admissibility"
+    }
+   ],
+   "term": "admissibility"
+  },
+  {
+   "id": "realizability",
+   "line": 168,
+   "related": [
+    "admissibility",
+    "semantics"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "house",
+     "text": "A word is realizable at x when its relational meaning from x is non-empty.",
+     "topic": "operational-grammar"
+    }
+   ],
+   "term": "realizability"
+  },
+  {
+   "id": "semantics",
+   "line": 169,
+   "related": [
+    "realizability",
+    "grammar"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "What an expression denotes in a structure, kept separate from its syntax and its cost.",
+     "topic": "operational-grammar"
+    }
+   ],
+   "term": "semantics"
+  },
+  {
+   "id": "admission",
+   "line": 170,
+   "related": [
+    "witness",
+    "admissibility"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "house",
+     "text": "Constructive admission: membership established together with a checkable witness.",
+     "topic": "constructive-admission"
+    }
+   ],
+   "term": "admission"
+  },
+  {
+   "id": "witness",
+   "line": 171,
+   "related": [
+    "admission"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "Data that certifies a claim and can be checked independently, e.g. a factorization.",
+     "topic": "constructive-admission"
+    }
+   ],
+   "term": "witness"
+  },
+  {
+   "id": "agent",
+   "line": 172,
+   "related": [
+    "simulation",
+    "emergence"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "An entity with state, perception and a policy for its next action.",
+     "topic": "agent-grammars"
+    }
+   ],
+   "term": "agent"
+  },
+  {
+   "id": "alphabet",
+   "line": 173,
+   "related": [
+    "word",
+    "alphabet tower"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "A finite non-empty set of symbols.",
+     "topic": "alphabets-words"
+    }
+   ],
+   "term": "alphabet"
+  },
+  {
+   "id": "alphabet tower",
+   "line": 174,
+   "related": [
+    "alphabet",
+    "Plicastratum"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "house",
+     "text": "A sequence of alphabets with expansion maps from each level to words of the level below.",
+     "topic": "alphabet-towers"
+    }
+   ],
+   "term": "alphabet tower"
+  },
+  {
+   "id": "automaton",
+   "line": 175,
+   "related": [
+    "regular language",
+    "state"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "A finite-state machine that accepts or rejects words.",
+     "topic": "finite-automata"
+    },
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "A cellular automaton: a grid of cells updated by a local rule.",
+     "topic": "cellular-automata"
+    }
+   ],
+   "term": "automaton"
+  },
+  {
+   "id": "channel",
+   "line": 179,
+   "related": [
+    "operation",
+    "address"
+   ],
+   "senses": [
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "house",
+     "text": "An operation channel: a path for typed operations from a finite vocabulary.",
+     "topic": "seurl"
+    },
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "An audio channel: one signal of a multichannel recording (left, right).",
+     "topic": null
+    }
+   ],
+   "term": "channel"
+  },
+  {
+   "id": "closure",
+   "line": 183,
+   "related": [
+    "generator",
+    "orbit"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "The smallest set containing a seed and closed under given operations.",
+     "topic": "relational-generativity"
+    }
+   ],
+   "term": "closure"
+  },
+  {
+   "id": "compilation",
+   "line": 184,
+   "related": [
+    "Matrix Loom",
+    "composition",
+    "monoid"
+   ],
+   "senses": [
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "house",
+     "text": "Turning a word of operations into one constant-size operation with the same meaning.",
+     "topic": "compilation"
+    }
+   ],
+   "term": "compilation"
+  },
+  {
+   "id": "complexity",
+   "line": 185,
+   "related": [
+    "cost"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "The resources an algorithm or problem needs, as a function of input size, on a stated machine model.",
+     "topic": "complexity"
+    }
+   ],
+   "term": "complexity"
+  },
+  {
+   "id": "composition",
+   "line": 186,
+   "related": [
+    "monoid",
+    "Matrix Loom"
+   ],
+   "senses": [
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "established",
+     "text": "Applying one operation after another: (g ∘ f)(x) = g(f(x)). Associative, generally not commutative.",
+     "topic": "symbolic-composition"
+    },
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "A piece of music; generative composition makes one from rules.",
+     "topic": "generative-composition"
+    }
+   ],
+   "term": "composition"
+  },
+  {
+   "id": "cost",
+   "line": 187,
+   "related": [
+    "complexity"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "house",
+     "text": "A cost profile: build time, space, query time, update time and output size, on a stated machine.",
+     "topic": "complexity"
+    }
+   ],
+   "term": "cost"
+  },
+  {
+   "id": "curvature",
+   "line": 188,
+   "related": [
+    "path",
+    "signature"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "How fast a curve turns; for a polyline, its signed turn angles.",
+     "topic": "curvature"
+    }
+   ],
+   "term": "curvature"
+  },
+  {
+   "id": "degree",
+   "line": 189,
+   "related": [
+    "graph"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "The number of edges at a vertex.",
+     "topic": "graph-theory"
+    },
+    {
+     "domain": "everyday",
+     "domainLabel": "Everyday usage",
+     "status": "established",
+     "text": "A unit of angle, 1/360 of a turn.",
+     "topic": null
+    }
+   ],
+   "term": "degree"
+  },
+  {
+   "id": "derivation",
+   "line": 190,
+   "related": [
+    "grammar",
+    "witness"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "A sequence of rewrites from the start symbol to a word.",
+     "topic": "generative-grammars"
+    }
+   ],
+   "term": "derivation"
+  },
+  {
+   "id": "emergence",
+   "line": 191,
+   "related": [
+    "agent",
+    "simulation"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "A population-level pattern not encoded in any single agent’s rule.",
+     "topic": "simulated-populations"
+    }
+   ],
+   "term": "emergence"
+  },
+  {
+   "id": "equivalence class",
+   "line": 192,
+   "related": [
+    "quotient",
+    "kernel"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "The set of elements equivalent to a given one; classes partition the set.",
+     "topic": "equivalence-classes"
+    }
+   ],
+   "term": "equivalence class"
+  },
+  {
+   "id": "frequency",
+   "line": 193,
+   "related": [
+    "pitch",
+    "spectrum"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "Cycles per second (Hz) of a periodic signal.",
+     "topic": "pitch-frequency"
+    }
+   ],
+   "term": "frequency"
+  },
+  {
+   "id": "generator",
+   "line": 194,
+   "related": [
+    "closure",
+    "orbit",
+    "seed"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "An element from which a structure is reached by its operations.",
+     "topic": "relational-generativity"
+    },
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "A seeded pseudo-random number generator.",
+     "topic": "procedural-environments"
+    }
+   ],
+   "term": "generator"
+  },
+  {
+   "id": "graph",
+   "line": 195,
+   "related": [
+    "path",
+    "degree",
+    "DAG"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "Vertices and edges.",
+     "topic": "graph-theory"
+    }
+   ],
+   "term": "graph"
+  },
+  {
+   "id": "machine",
+   "line": 196,
+   "related": [
+    "state",
+    "automaton"
+   ],
+   "senses": [
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "established",
+     "text": "A typed machine: a state machine that refuses inadmissible operations.",
+     "topic": "typed-machines"
+    },
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "A machine model (word RAM) against which costs are stated.",
+     "topic": "complexity"
+    }
+   ],
+   "term": "machine"
+  },
+  {
+   "id": "matrix",
+   "line": 197,
+   "related": [
+    "image",
+    "kernel",
+    "Matrix Loom"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "A rectangular array representing a linear map in chosen bases.",
+     "topic": "image-kernel"
+    }
+   ],
+   "term": "matrix"
+  },
+  {
+   "id": "mode",
+   "line": 198,
+   "related": [
+    "rotation"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "A rotation of a scale’s step pattern.",
+     "topic": "modal-cyclic"
+    }
+   ],
+   "term": "mode"
+  },
+  {
+   "id": "monoid",
+   "line": 199,
+   "related": [
+    "word",
+    "composition"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "A set with an associative operation and identity; Σ* is the free one.",
+     "topic": "alphabets-words"
+    }
+   ],
+   "term": "monoid"
+  },
+  {
+   "id": "numeral",
+   "line": 200,
+   "related": [
+    "address",
+    "word"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "house",
+     "text": "A word over digits denoting a value; in a digit grammar, a program x ↦ b·x + d.",
+     "topic": "numerical-grammars"
+    }
+   ],
+   "term": "numeral"
+  },
+  {
+   "id": "operation",
+   "line": 201,
+   "related": [
+    "channel",
+    "transition"
+   ],
+   "senses": [
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "established",
+     "text": "A named, typed action on a resource, admissible in some states.",
+     "topic": "purl"
+    }
+   ],
+   "term": "operation"
+  },
+  {
+   "id": "parser",
+   "line": 202,
+   "related": [
+    "grammar"
+   ],
+   "senses": [
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "established",
+     "text": "A program that decides membership in a grammar’s language and builds a parse tree.",
+     "topic": "grammars-as-programs"
+    }
+   ],
+   "term": "parser"
+  },
+  {
+   "id": "perturbation",
+   "line": 203,
+   "related": [
+    "kernel"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "A small change to an input or state, studied for how it propagates.",
+     "topic": "perturbation"
+    }
+   ],
+   "term": "perturbation"
+  },
+  {
+   "id": "pitch",
+   "line": 204,
+   "related": [
+    "frequency",
+    "interval"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "The perceived height of a sound; for pitch classes, an element of ℤ/12.",
+     "topic": "pitch-frequency"
+    }
+   ],
+   "term": "pitch"
+  },
+  {
+   "id": "procedural",
+   "line": 205,
+   "related": [
+    "seed"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "Generated by an algorithm rather than authored by hand.",
+     "topic": "procedural-environments"
+    }
+   ],
+   "term": "procedural"
+  },
+  {
+   "id": "provenance",
+   "line": 206,
+   "related": [
+    "witness"
+   ],
+   "senses": [
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "established",
+     "text": "The recorded origin and history of a resource or claim.",
+     "topic": "purl"
+    }
+   ],
+   "term": "provenance"
+  },
+  {
+   "id": "quotient",
+   "line": 207,
+   "related": [
+    "equivalence class",
+    "kernel"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "The set of equivalence classes; also the answer c of a / b when it is unique.",
+     "topic": "equivalence-classes"
+    }
+   ],
+   "term": "quotient"
+  },
+  {
+   "id": "ratio",
+   "line": 208,
+   "related": [
+    "interval"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "A frequency ratio such as 3/2 for a just perfect fifth.",
+     "topic": "tuning"
+    }
+   ],
+   "term": "ratio"
+  },
+  {
+   "id": "recursion",
+   "line": 209,
+   "related": [
+    "fold"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "Definition of a function by its values on smaller arguments.",
+     "topic": "recursive-folds"
+    }
+   ],
+   "term": "recursion"
+  },
+  {
+   "id": "regular language",
+   "line": 210,
+   "related": [
+    "automaton"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "A language accepted by some finite automaton.",
+     "topic": "finite-automata"
+    }
+   ],
+   "term": "regular language"
+  },
+  {
+   "id": "rendering",
+   "line": 211,
+   "related": [
+    "image"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "Computing an image of a scene by approximating the rendering equation.",
+     "topic": "rendering-mathematics"
+    }
+   ],
+   "term": "rendering"
+  },
+  {
+   "id": "rewriting",
+   "line": 212,
+   "related": [
+    "grammar"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "Replacing a part of a word or graph according to a rule.",
+     "topic": "compositional-forms"
+    }
+   ],
+   "term": "rewriting"
+  },
+  {
+   "id": "rotation",
+   "line": 213,
+   "related": [
+    "mode",
+    "matrix"
+   ],
+   "senses": [
+    {
+     "domain": "relational",
+     "domainLabel": "Relational & Generative Mathematics",
+     "status": "established",
+     "text": "Moving a word’s first letter to the end.",
+     "topic": "modal-cyclic"
+    },
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "An orthogonal map with determinant 1.",
+     "topic": "spatial-tensors"
+    }
+   ],
+   "term": "rotation"
+  },
+  {
+   "id": "rule",
+   "line": 214,
+   "related": [
+    "World Loom",
+    "automaton"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "A cellular automaton’s local update, numbered 0–255.",
+     "topic": "cellular-automata"
+    }
+   ],
+   "term": "rule"
+  },
+  {
+   "id": "run",
+   "line": 215,
+   "related": [
+    "transition"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "established",
+     "text": "A sequence of states following a word’s transitions.",
+     "topic": "transition-systems"
+    }
+   ],
+   "term": "run"
+  },
+  {
+   "id": "sampling",
+   "line": 216,
+   "related": [
+    "signal",
+    "kernel"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "Recording a signal’s value at regular times.",
+     "topic": "sound-signals"
+    }
+   ],
+   "term": "sampling"
+  },
+  {
+   "id": "seed",
+   "line": 217,
+   "related": [
+    "generator",
+    "World Loom"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "The initial value of a generator or the first row of a loom.",
+     "topic": "world-loom"
+    }
+   ],
+   "term": "seed"
+  },
+  {
+   "id": "signal",
+   "line": 218,
+   "related": [
+    "sampling"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "A function of time, e.g. pressure.",
+     "topic": "sound-signals"
+    }
+   ],
+   "term": "signal"
+  },
+  {
+   "id": "simulation",
+   "line": 219,
+   "related": [
+    "world model"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "Executing a model. Its results are SIMULATED, not OBSERVED.",
+     "topic": "world-models"
+    }
+   ],
+   "term": "simulation"
+  },
+  {
+   "id": "spectrum",
+   "line": 220,
+   "related": [
+    "frequency"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "The amplitudes and phases of a signal’s sinusoidal components.",
+     "topic": "fourier"
+    }
+   ],
+   "term": "spectrum"
+  },
+  {
+   "id": "substrate",
+   "line": 221,
+   "related": [
+    "transition",
+    "projection"
+   ],
+   "senses": [
+    {
+     "domain": "foundations",
+     "domainLabel": "Foundations of Computation",
+     "status": "house",
+     "text": "A state space with its transitions, as studied by SubstrateIO.",
+     "topic": "substrate-theory"
+    }
+   ],
+   "term": "substrate"
+  },
+  {
+   "id": "synthesis",
+   "line": 222,
+   "related": [
+    "spectrum"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "Generating sound from a model.",
+     "topic": "synthesis"
+    }
+   ],
+   "term": "synthesis"
+  },
+  {
+   "id": "tensor",
+   "line": 223,
+   "related": [
+    "frame"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "An object whose coordinates change by a fixed rule under change of frame.",
+     "topic": "spatial-tensors"
+    }
+   ],
+   "term": "tensor"
+  },
+  {
+   "id": "topology",
+   "line": 224,
+   "related": [
+    "path",
+    "portal"
+   ],
+   "senses": [
+    {
+     "domain": "geometry",
+     "domainLabel": "Geometry & Representation",
+     "status": "established",
+     "text": "The study of properties preserved by continuous deformation.",
+     "topic": "topology"
+    }
+   ],
+   "term": "topology"
+  },
+  {
+   "id": "type",
+   "line": 225,
+   "related": [
+    "admissibility"
+   ],
+   "senses": [
+    {
+     "domain": "languages",
+     "domainLabel": "Programmable Languages",
+     "status": "established",
+     "text": "A classification of phrases by the values they compute.",
+     "topic": "types-as-admissibility"
+    }
+   ],
+   "term": "type"
+  },
+  {
+   "id": "window",
+   "line": 226,
+   "related": [
+    "frame",
+    "spectrum"
+   ],
+   "senses": [
+    {
+     "domain": "acoustic",
+     "domainLabel": "Acoustic Sciences",
+     "status": "established",
+     "text": "A tapering function selecting a short segment of a signal.",
+     "topic": "time-frequency"
+    }
+   ],
+   "term": "window"
+  },
+  {
+   "id": "world model",
+   "line": 227,
+   "related": [
+    "simulation"
+   ],
+   "senses": [
+    {
+     "domain": "worlds",
+     "domainLabel": "Computational Worlds",
+     "status": "established",
+     "text": "A model predicting how a world changes under actions.",
+     "topic": "world-models"
+    }
+   ],
+   "term": "world model"
+  },
+  {
+   "id": "harness",
+   "line": 228,
+   "related": [
+    "Harness Master",
+    "Harnesser"
+   ],
+   "senses": [
+    {
+     "domain": "campus",
+     "domainLabel": "Campus (the university itself)",
+     "status": "mythology",
+     "text": "The One-Day Harness: a guided, self-paced day across the six divisions that ends in six personal volumes. Not a degree or credential.",
+     "topic": null
+    },
+    {
+     "domain": "everyday",
+     "domainLabel": "Everyday usage",
+     "status": "established",
+     "text": "In software, a test harness: code that runs other code under controlled conditions.",
+     "topic": null
+    }
+   ],
+   "term": "harness"
+  },
+  {
+   "id": "Harness Master",
+   "line": 232,
+   "related": [
+    "harness",
+    "Harnesser"
+   ],
+   "senses": [
+    {
+     "domain": "campus",
+     "domainLabel": "Campus (the university itself)",
+     "status": "mythology",
+     "text": "The university’s guide role: an instructor-guide who helps a visitor learn and make something. Campus HMs are fictional characters; human HM sessions are requests, not bookings.",
+     "topic": null
+    }
+   ],
+   "term": "Harness Master"
+  },
+  {
+   "id": "Harnesser",
+   "line": 233,
+   "related": [
+    "harness",
+    "Harness Master"
+   ],
+   "senses": [
+    {
+     "domain": "campus",
+     "domainLabel": "Campus (the university itself)",
+     "status": "mythology",
+     "text": "A visitor who has entered the harness. A participatory role, not a rank.",
+     "topic": null
+    }
+   ],
+   "term": "Harnesser"
+  },
+  {
+   "id": "specimen volume",
+   "line": 234,
+   "related": [
+    "procedural"
+   ],
+   "senses": [
+    {
+     "domain": "campus",
+     "domainLabel": "Campus (the university itself)",
+     "status": "mythology",
+     "text": "A generated preview book in the Library, combining real registry topics. Labelled “Specimen Volume / Preview”; never a participant’s book.",
+     "topic": null
+    }
+   ],
+   "term": "specimen volume"
+  },
+  {
+   "id": "Haq Roots",
+   "line": 235,
+   "related": [],
+   "senses": [
+    {
+     "domain": "campus",
+     "domainLabel": "Campus (the university itself)",
+     "status": "mythology",
+     "text": "The university’s invented name for its theme, “the root of truth”. A brand name; no linguistic derivation is claimed.",
+     "topic": null
+    }
+   ],
+   "term": "Haq Roots"
+  }
+ ]
+}

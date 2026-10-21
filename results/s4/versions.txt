@@ -1,0 +1,7 @@
+llama.cpp d454a204ef2b63af357744809c05af897611a72e (Thu Oct 22 01:02:22 2026 +0800) build: cmake Release GGML_NATIVE=ON CPU-only
+version: 0.7.0-dev (build 1, commit d454a20)
+built with GNU 13.3.0 for Linux x86_64
+cmake version 3.28.3
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+1d9614638d18024d0fbb36575a15f1302a3adf044df10345688ec4f6e1c4ff32  /home/user/models/qwen2.5-coder-0.5b-instruct-q4_k_m.gguf
+cc324af070c2ecbfd324a30884d2f951a7ff756aba85cb811a6ec436933bb046  /home/user/models/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf
