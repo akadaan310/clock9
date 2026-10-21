@@ -16,3 +16,15 @@ by the independent Python `reference_eval` (or hand-written reference solutions 
 **Known bias:** the `id` and `para` splits are written by the same agent that
 wrote the parser, in a DSL chosen by that agent. They measure in-domain coverage,
 not general coding ability. HumanEval is the externally-authored check.
+
+## Blind paraphrase split (added after parser v1.0 was frozen in 7848ac0)
+
+| file | sha256 | source |
+|---|---|---|
+| `listops_blind.jsonl` | `3c910c688f59ea745d7ed019f2b250f0f6235242116eccfe5a8cb20429b66ef9` | prompts of the 40 `id` tasks rewritten by Qwen2.5-Coder-1.5B-Instruct Q4_K_M (greedy, seed 9) via `harness/make_blind.ts`; tests/AST inherited from `source_id` |
+
+The parser author did not read these prompts before scoring. A model paraphrase
+may have changed a task's meaning; such label noise affects every arm equally and
+is audited (post hoc, labelled as such) in `research-matrix.md`. The first write had
+a JSON-replacer bug that dropped nested fields; rows were re-joined with their
+source tasks by `source_id` (prompts untouched) before this hash was taken.
