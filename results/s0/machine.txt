@@ -1,0 +1,2 @@
+host: Model name: Intel(R) Xeon(R) Processor @ 2.10GHz, 4 vCPU, 15Gi RAM, 6.18.44-fc-v139
+node v22.22.0, typescript 5.6.3, python Python 3.13.16
