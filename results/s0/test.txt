@@ -1,0 +1,9 @@
+
+> clock9-hybrid-research@0.1.0 test
+> npm run build && node dist/tests/run.js
+
+
+> clock9-hybrid-research@0.1.0 build
+> tsc --project tsconfig.json
+
+22 checks passed. CPU/browser-compatible grammar-clocked research kernel; no LLM speedup claim.

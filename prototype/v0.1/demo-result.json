@@ -1,0 +1,108 @@
+
+> clock9-hybrid-research@0.1.0 demo
+> npm run build && node dist/src/demo.js
+
+
+> clock9-hybrid-research@0.1.0 build
+> tsc --project tsconfig.json
+
+{
+  "mode": "clock9-non-neural",
+  "ops": [
+    {
+      "kind": "add",
+      "value": 1
+    },
+    {
+      "kind": "mul",
+      "value": 2
+    },
+    {
+      "kind": "add",
+      "value": 3
+    }
+  ],
+  "code": "export function transform(x: number): number {\n  return 2 * x + (5);\n}\n",
+  "uri": "clock9://program/%7B%22ops%22%3A%5B%7B%22kind%22%3A%22add%22%2C%22value%22%3A1%7D%2C%7B%22kind%22%3A%22mul%22%2C%22value%22%3A2%7D%2C%7B%22kind%22%3A%22add%22%2C%22value%22%3A3%7D%5D%2C%22version%22%3A1%7D.1f3f4fdb",
+  "verification": true,
+  "proof": [
+    {
+      "x": -3,
+      "interpreted": -1,
+      "compiled": -1
+    },
+    {
+      "x": -1,
+      "interpreted": 3,
+      "compiled": 3
+    },
+    {
+      "x": 0,
+      "interpreted": 5,
+      "compiled": 5
+    },
+    {
+      "x": 2,
+      "interpreted": 9,
+      "compiled": 9
+    },
+    {
+      "x": 7,
+      "interpreted": 19,
+      "compiled": 19
+    }
+  ],
+  "trace": [
+    {
+      "beat": 0,
+      "kind": "context",
+      "details": "goal:Compose a typed transformation for a geometric illustration; admitted DSL: add/sub/mul/neg"
+    },
+    {
+      "beat": 1,
+      "kind": "draft",
+      "details": "add,mul,add"
+    },
+    {
+      "beat": 2,
+      "kind": "admission",
+      "details": "accepted"
+    },
+    {
+      "beat": 3,
+      "kind": "compile",
+      "details": "typed affine program length=3; source bytes=71"
+    },
+    {
+      "beat": 4,
+      "kind": "promote",
+      "details": "reused:P1, certificate:0545be74"
+    },
+    {
+      "beat": 5,
+      "kind": "witness",
+      "details": "affine proof samples:5; PASS"
+    }
+  ],
+  "decode_ok": true,
+  "motifs": [
+    {
+      "glyph": "P1",
+      "unfolded": [
+        "add",
+        "mul"
+      ],
+      "occurrences": 5,
+      "certificate": "0545be74"
+    },
+    {
+      "glyph": "P2",
+      "unfolded": [
+        "mul",
+        "add"
+      ],
+      "occurrences": 3,
+      "certificate": "adb787ea"
+    }
+  ]
+}

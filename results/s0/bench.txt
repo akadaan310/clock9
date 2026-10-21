@@ -1,0 +1,18 @@
+
+> clock9-hybrid-research@0.1.0 bench
+> npm run build && node dist/src/benchmark.js
+
+
+> clock9-hybrid-research@0.1.0 build
+> tsc --project tsconfig.json
+
+{
+  "kind": "CPU_ONLY_KERNEL_MICROBENCHMARK_NOT_LLM",
+  "environment": "current host Node.js, not Android",
+  "n": 1000,
+  "average_ms": 0.030050908,
+  "p50_ms": 0.017713000000000534,
+  "p95_ms": 0.05545000000000044,
+  "throughput_proposals_per_second": 33276.86471237408,
+  "precision": "includes in-memory proposal, trace, independent affine verification; excludes IO and model inference"
+}
