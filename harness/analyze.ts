@@ -7,9 +7,9 @@ import { ROOT, loadListOps } from './tasks.js';
 type Row = { arm: string; id: string; split: string; status: string; resolvedBy: string | null; hiddenPass: boolean; wallMs: number; modelCpuSec: number; genTokens: number; promptTokens: number; modelCalls: number; pass?: number; beats?: { kind: string; source: string; t_ms: number }[] };
 const dir = path.join(ROOT, 'results', 's5');
 const load = (f: string) => (existsSync(path.join(dir, f)) ? JSON.parse(readFileSync(path.join(dir, f), 'utf8')) as Row[] : []);
-const lo = load('listops-rows.json').filter(r => r.arm !== 'B4' || r.pass === 1);
+const lo = [...load('listops-rows.json'), ...load('listops-spec-rows.json')].filter(r => r.arm !== 'B4' || r.pass === 1);
 const lo2 = load('listops-rows.json').filter(r => r.arm === 'B4' && r.pass === 2);
-const he = load('humaneval-rows.json');
+const he = [...load('humaneval-rows.json'), ...load('humaneval-spec-rows.json')];
 const blind = loadListOps('listops_blind.jsonl');
 const src = new Map(loadListOps().map(t => [t.id, t.prompt]));
 const verbatim = new Set(blind.filter(t => src.get((t as unknown as { source_id: string }).source_id) === t.prompt).map(t => t.id));
@@ -48,7 +48,7 @@ const mix = (a: string, f: number) => {
   const i = strat(a, true), o = strat(a, false);
   return { f, passRate: +(f * i.passRate + (1 - f) * o.passRate).toFixed(3), meanWallMs: +(f * i.meanWallMs + (1 - f) * o.meanWallMs).toFixed(0), modelCpuSecPerTask: +(f * i.modelCpuSec / i.n + (1 - f) * o.modelCpuSec / o.n).toFixed(2) };
 };
-const curve = [0, 0.1, 0.25, 0.5, 0.75, 0.9, 1].map(f => ({ f, B6: mix('B6', f), B5: mix('B5', f), 'B1-1.5': mix('B1-1.5', f), 'B1-0.5': mix('B1-0.5', f), C1: mix('C1', f) }));
+const curve = [0, 0.1, 0.25, 0.4, 0.5, 0.75, 0.9, 1].map(f => ({ f, B6n: mix('B6n', f), B6: mix('B6', f), 'B2-1.5': mix('B2-1.5', f), 'B1-1.5': mix('B1-1.5', f), 'B1-0.5': mix('B1-0.5', f), C1: mix('C1', f) }));
 
 // Grammar overhead: on tasks the grammar did NOT resolve, time spent before the first escalate beat.
 const overhead = lo.filter(r => (r.arm === 'B5' || r.arm === 'B6') && r.resolvedBy !== 'grammar' && r.beats).map(r => r.beats!.find(b => b.kind === 'escalate')?.t_ms ?? r.wallMs);
@@ -67,7 +67,7 @@ md.push('| arm | pass | id | para | blind (true para) | blind (verbatim) | oog |
 for (const r of listopsTable) md.push(`| ${r.arm} | ${r.pass}/${r.n} (${(100 * r.passRate).toFixed(1)}%) | ${r.id} | ${r.para} | ${r.blindTrue} | ${r.blindVerbatim} | ${r.oog} | ${r.refused} | ${r.falseAccept} | ${r.precision ?? '—'} | ${r.meanWallMs} / ${r.p50WallMs} / ${r.p95WallMs} | ${r.modelCpuSec} | ${r.modelCpuSecPerCorrect ?? '—'} |`);
 md.push('', '| HumanEval arm | pass@1 | false accept | mean / p50 / p95 wall ms | model calls | gen tokens | model CPU-s | CPU-s per correct |', '|---|---|---|---|---|---|---|---|');
 for (const r of heTable) md.push(`| ${r.arm} | ${r.pass}/${r.n} (${(100 * r.passRate).toFixed(1)}%) | ${r.falseAccept} | ${r.meanWallMs} / ${r.p50WallMs} / ${r.p95WallMs} | ${r.modelCalls} | ${r.genTokens} | ${r.modelCpuSec} | ${r.modelCpuSecPerCorrect ?? '—'} |`);
-md.push('', '| in-grammar fraction f | B6 pass / ms / CPU-s | B5 pass / ms / CPU-s | B1-1.5 pass / ms / CPU-s | B1-0.5 pass / ms / CPU-s | C1 pass / ms / CPU-s |', '|---|---|---|---|---|---|');
-for (const c of curve) md.push(`| ${c.f} | ${[c.B6, c.B5, c['B1-1.5'], c['B1-0.5'], c.C1].map(x => `${x.passRate} / ${x.meanWallMs} / ${x.modelCpuSecPerTask}`).join(' | ')} |`);
+md.push('', '| in-grammar fraction f | B6n | B6 | B2-1.5 | B1-1.5 | B1-0.5 | C1 |', '|---|---|---|---|---|---|---|');
+for (const c of curve) md.push(`| ${c.f} | ${[c.B6n, c.B6, c['B2-1.5'], c['B1-1.5'], c['B1-0.5'], c.C1].map(x => `${x.passRate} / ${x.meanWallMs} / ${x.modelCpuSecPerTask}`).join(' | ')} |`);
 writeFileSync(path.join(dir, 'analysis.md'), md.join('\n') + '\n');
 console.log(md.join('\n')); console.log(JSON.stringify({ grammarOverhead, cache, verbatimBlind: verbatim.size }));

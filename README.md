@@ -35,7 +35,7 @@ it: grammar, n-gram, cache, neural, tool, macro or fallback.
 
 ```sh
 npm ci
-npm test                 # 56 checks (core + sandbox integration)
+npm test                 # 55 checks (core + sandbox integration)
 npm run test:v01         # the original 22 checks (needs `npm i` in prototype/v0.1)
 npm run demo             # writes results/demo/*
 

@@ -1,0 +1,3 @@
+{"arm":"B2-1.5","n":164,"passRate":0.707,"perSplit":{"humaneval":"116/164"},"refused":0,"falseAccept":48,"resolvedBy":{"neural-python":164},"wallMs":{"mean":5888.7,"p50":5291.8,"p95":11188,"total":965742},"modelCalls":164,"genTokens":29018,"promptTokens":30377,"modelCpuSec":3763.6} (984 s)
+{"arm":"C1n","n":164,"passRate":0.726,"perSplit":{"humaneval":"119/164"},"refused":0,"falseAccept":45,"resolvedBy":{"neural-python":110,"fallback-python":54},"wallMs":{"mean":6671.5,"p50":5162.2,"p95":15308.6,"total":1094134},"modelCalls":218,"genTokens":45248,"promptTokens":40788,"modelCpuSec":4221.3} (1113 s)
+{"servers":{"q1.5+ng":{"loadMs":1012,"peakRssMiB":3688},"q0.5+ng":{"loadMs":1510,"peakRssMiB":1491}}}
