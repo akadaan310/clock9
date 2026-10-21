@@ -1,0 +1,27 @@
+{
+ "library": [
+  {
+   "glyph": "M1",
+   "body": "map neg | map neg",
+   "witnesses": [
+    "train-009",
+    "train-033"
+   ],
+   "certificate": "abe1d3a5"
+  },
+  {
+   "glyph": "M2",
+   "body": "map neg | filter nonzero",
+   "witnesses": [
+    "train-017",
+    "train-056"
+   ],
+   "certificate": "6f9ac125"
+  }
+ ],
+ "program": "map neg | map neg | take 2 | reverse | sum",
+ "folded": "M1 | take 2 | reverse | sum",
+ "unfolded": "map neg | map neg | take 2 | reverse | sum",
+ "identity": true,
+ "behaviourWitness": true
+}

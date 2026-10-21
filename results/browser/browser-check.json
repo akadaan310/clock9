@@ -1,0 +1,43 @@
+{
+ "chromium": "playwright 1.56.1 bundled chromium (/opt/pw-browsers)",
+ "mobile": {
+  "status": "solved by grammar · clock9://listops/1.0/filter%20even%20%7C%20map%20square%20%7C%20sum.c556e8d1",
+  "beats": [
+   "context/grammartask=web; declared type=int; visible examples=2",
+   "retrieve/cachemiss",
+   "draft/grammareven / square / sum -> 2 readings",
+   "draft/ngramranked 2; top=filter even | map square | sum (score -10.08)",
+   "admit/toolinterpreter on visible examples: PASS for filter even | map square | sum",
+   "compile/grammarlistops/1.0 -> python 132 bytes",
+   "verify/toolno independent executor available (browser mode): interpreter witness only",
+   "promote/macrocached=true; verified programs=1; certified macros=0"
+  ],
+  "code": "def solve(xs: list[int]) -> int:\n    v = list(xs)\n    v = [x for x in v if x % 2 == 0]\n    v = [x * x for x in v]\n    return sum(v)\n",
+  "text": "authored-templateIn Everyday usage, “fold” is glossed as follows:cited-glossary · establishedA crease: bending a surface onto itself. Paper folding preserves lengths; Plicastratum folding preserves the word.cited-glossaryRelated entries: Plicastratum, recursion, grammar.",
+  "refusal": "refused (unresolved)",
+  "horizontalOverflow": false,
+  "errors": [],
+  "offOrigin": [],
+  "requests": 10
+ },
+ "desktop": {
+  "status": "solved by grammar · clock9://listops/1.0/filter%20even%20%7C%20map%20square%20%7C%20sum.c556e8d1",
+  "beats": [
+   "context/grammartask=web; declared type=int; visible examples=2",
+   "retrieve/cachemiss",
+   "draft/grammareven / square / sum -> 2 readings",
+   "draft/ngramranked 2; top=filter even | map square | sum (score -10.08)",
+   "admit/toolinterpreter on visible examples: PASS for filter even | map square | sum",
+   "compile/grammarlistops/1.0 -> python 132 bytes",
+   "verify/toolno independent executor available (browser mode): interpreter witness only",
+   "promote/macrocached=true; verified programs=1; certified macros=0"
+  ],
+  "code": "def solve(xs: list[int]) -> int:\n    v = list(xs)\n    v = [x for x in v if x % 2 == 0]\n    v = [x * x for x in v]\n    return sum(v)\n",
+  "text": "authored-templateIn Everyday usage, “fold” is glossed as follows:cited-glossary · establishedA crease: bending a surface onto itself. Paper folding preserves lengths; Plicastratum folding preserves the word.cited-glossaryRelated entries: Plicastratum, recursion, grammar.",
+  "refusal": "refused (unresolved)",
+  "horizontalOverflow": false,
+  "errors": [],
+  "offOrigin": [],
+  "requests": 10
+ }
+}

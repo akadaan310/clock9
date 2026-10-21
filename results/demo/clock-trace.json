@@ -1,0 +1,78 @@
+{
+ "task": "para-000",
+ "beats": [
+  {
+   "beat": 0,
+   "kind": "context",
+   "source": "grammar",
+   "detail": "task=para-000; declared type=int; visible examples=2",
+   "t_ms": 0.261
+  },
+  {
+   "beat": 1,
+   "kind": "retrieve",
+   "source": "cache",
+   "detail": "miss",
+   "t_ms": 0.633
+  },
+  {
+   "beat": 2,
+   "kind": "draft",
+   "source": "grammar",
+   "detail": "total / squares / even -> 2 readings",
+   "t_ms": 7.043
+  },
+  {
+   "beat": 3,
+   "kind": "draft",
+   "source": "ngram",
+   "detail": "ranked 2; top=map square | filter even | sum (score -13.82)",
+   "t_ms": 7.261
+  },
+  {
+   "beat": 4,
+   "kind": "admit",
+   "source": "tool",
+   "detail": "interpreter on visible examples: PASS for map square | filter even | sum",
+   "t_ms": 7.695
+  },
+  {
+   "beat": 5,
+   "kind": "compile",
+   "source": "grammar",
+   "detail": "listops/1.0 -> python 132 bytes",
+   "t_ms": 7.835
+  },
+  {
+   "beat": 6,
+   "kind": "verify",
+   "source": "tool",
+   "detail": "python3-sandbox(unshare-net,uid65534,rlimits): 2/2 visible (source from grammar)",
+   "t_ms": 99.572
+  },
+  {
+   "beat": 7,
+   "kind": "promote",
+   "source": "macro",
+   "detail": "cached=true; verified programs=1; certified macros=0",
+   "t_ms": 99.932
+  }
+ ],
+ "witness": {
+  "grammarVersion": "listops/1.0",
+  "parserVersion": "listops-nl/1.0",
+  "ngramCorpusHash": "fef3bd24",
+  "macroLibrary": "listops-macros/1.0#0",
+  "interpreterVisible": true,
+  "executor": "python3-sandbox(unshare-net,uid65534,rlimits)",
+  "executorVisible": {
+   "pass": true,
+   "passed": 2,
+   "total": 2,
+   "error": null,
+   "ms": 34.934840999994776
+  },
+  "candidatesTried": 2,
+  "candidatesPassingVisible": 2
+ }
+}

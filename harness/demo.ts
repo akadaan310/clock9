@@ -44,7 +44,10 @@ writeFileSync(path.join(out, 'text-passage.json'), JSON.stringify(text, null, 1)
 
 // 3. fold/unfold trace: solve a few train tasks that share words, then fold a new program
 for (const t of all.filter(t => t.split === 'train').slice(0, 60)) await solver.solve(t);
-const target = fromDsl('filter even | map square | take 2 | sum');
+const top = solver.macros[0];
+if (!top) throw Error('no certified macro after 60 verified train programs');
+// target = a NEW composition: the top certified word followed by two other stages
+const target = { stages: [...top.body, ...fromDsl('take 2 | reverse | sum').stages], terminal: 'sum' as const };
 const folded = fold(target, solver.macros);
 const foldTrace = {
   library: solver.macros.slice(0, 8).map(m => ({ glyph: m.glyph, body: toDsl({ stages: m.body, terminal: 'list' }).replace(/ \| list$/, ''), witnesses: m.witnesses, certificate: m.certificate })),

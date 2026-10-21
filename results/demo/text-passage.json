@@ -1,0 +1,48 @@
+{
+ "ok": true,
+ "refusal": null,
+ "passage": "In Relational & Generative Mathematics, “Plicastratum” is glossed as follows: The stratified sequence of words and rules produced by successive folds. This is a house construction of Substrate University, not established mathematics. Related entries: fold, alphabet tower.",
+ "sentences": [
+  {
+   "text": "In Relational & Generative Mathematics, “Plicastratum” is glossed as follows:",
+   "provenance": {
+    "kind": "authored-template"
+   }
+  },
+  {
+   "text": "The stratified sequence of words and rules produced by successive folds.",
+   "provenance": {
+    "kind": "cited-glossary",
+    "termId": "Plicastratum",
+    "domain": "relational",
+    "status": "house",
+    "source": "https://github.com/akadaan310/abedkadaancom/blob/6a0f5eaa8dd39b58bdd99889721ecea5f54e62bb/src/content/glossary.ts#L96"
+   }
+  },
+  {
+   "text": "This is a house construction of Substrate University, not established mathematics.",
+   "provenance": {
+    "kind": "authored-template",
+    "status": "house"
+   }
+  },
+  {
+   "text": "Related entries: fold, alphabet tower.",
+   "provenance": {
+    "kind": "cited-glossary",
+    "termId": "Plicastratum",
+    "source": "https://github.com/akadaan310/abedkadaancom/blob/6a0f5eaa8dd39b58bdd99889721ecea5f54e62bb/src/content/glossary.ts#L96"
+   }
+  }
+ ],
+ "derivation": [
+  "Request -> Define",
+  "T -> Plicastratum",
+  "D -> relational (n-gram context relational:0.00)",
+  "Status -> house",
+  "Related -> list"
+ ],
+ "grammarVersion": "glossary-text/1.0",
+ "ngramCorpusHash": "f8412c03",
+ "snapshotCommit": "6a0f5eaa8dd39b58bdd99889721ecea5f54e62bb"
+}

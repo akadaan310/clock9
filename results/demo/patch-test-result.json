@@ -1,0 +1,15 @@
+{
+ "task": "para-000",
+ "prompt": "Compute the total of the squares of all even entries in xs.",
+ "resolvedBy": "grammar",
+ "dsl": "map square | filter even | sum",
+ "sandbox": "python3-sandbox(unshare-net,uid65534,rlimits)",
+ "unittest": {
+  "pass": true,
+  "passed": 1,
+  "total": 1,
+  "error": null,
+  "ms": 85.9427979994507
+ },
+ "hiddenCases": 25
+}

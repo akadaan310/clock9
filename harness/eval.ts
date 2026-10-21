@@ -10,7 +10,8 @@
  *   C1      0.5B Python -> visible-example check -> 1.5B fallback (no grammar; ablation)
  *   B5      grammar -> 0.5B GBNF DSL -> 0.5B Python, each gated by visible examples
  *   B6      B5 -> 1.5B Python fallback
- * HumanEval arms: B1-0.5, B1-1.5, B3, C1 (visible = docstring examples). B0/B4/B5's
+ *   B2-0.5/B2-1.5  model alone with llama.cpp ngram-mod speculation;  B6n  B6 on ngram-mod servers
+ * HumanEval arms: B1-0.5, B1-1.5, B2-1.5, B3, C1, C1n (C1 on ngram-mod servers) (visible = docstring examples). B0/B4/B5's
  * ListOps grammar has no HumanEval coverage by construction (reported, not run).
  *
  * Hidden tests are used ONLY for scoring, after the arm has produced its answer.
@@ -35,10 +36,14 @@ const M15 = `${MODELS}/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf`;
 const sandbox = new PythonSandbox();
 
 // ------------------------------------------------------------ servers (lazy, measured)
+const NGRAM = ['--spec-type', 'ngram-mod', '--spec-ngram-mod-n-match', '8', '--spec-ngram-mod-n-min', '4', '--spec-ngram-mod-n-max', '16'];
 const SERVER_CFG: Record<string, { model: string; extra: string[] }> = {
   'q0.5': { model: M05, extra: [] },
   'q1.5': { model: M15, extra: [] },
   'q1.5+d0.5': { model: M15, extra: ['-md', M05, '--spec-type', 'draft-simple', '--spec-draft-n-max', '3'] },
+  // best n-gram speculation config from S4 (results/s4/summary.json)
+  'q0.5+ng': { model: M05, extra: NGRAM },
+  'q1.5+ng': { model: M15, extra: NGRAM },
 };
 const servers = new Map<string, LlamaServer>();
 const loads: Record<string, number> = {};
@@ -96,6 +101,9 @@ async function runListOps(): Promise<Row[]> {
     else if (arm === 'C1') solver = new HybridSolver({ grammar: false, cache: false, pythonModel: await m('q0.5'), fallbackModel: await m('q1.5'), executor: sandbox, train });
     else if (arm === 'B5') { const a = await m('q0.5'); solver = new HybridSolver({ grammar: true, cache: false, dslModel: a, pythonModel: a, executor: sandbox, train }); }
     else if (arm === 'B6') { const a = await m('q0.5'); solver = new HybridSolver({ grammar: true, cache: false, dslModel: a, pythonModel: a, fallbackModel: await m('q1.5'), executor: sandbox, train }); }
+    else if (arm === 'B6n') { const a = await m('q0.5+ng'); solver = new HybridSolver({ grammar: true, cache: false, dslModel: a, pythonModel: a, fallbackModel: await m('q1.5+ng'), executor: sandbox, train }); }
+    else if (arm === 'B2-0.5') direct = await m('q0.5+ng');
+    else if (arm === 'B2-1.5') direct = await m('q1.5+ng');
     else if (arm === 'B1-0.5') direct = await m('q0.5');
     else if (arm === 'B1-1.5') direct = await m('q1.5');
     else if (arm === 'B3') direct = await m('q1.5+d0.5');
@@ -129,7 +137,7 @@ async function runHumanEval(): Promise<Row[]> {
   const rows: Row[] = [];
   for (const arm of arms) {
     const t0 = performance.now();
-    const chain: string[] = arm === 'B1-0.5' ? ['q0.5'] : arm === 'B1-1.5' ? ['q1.5'] : arm === 'B3' ? ['q1.5+d0.5'] : arm === 'C1' ? ['q0.5', 'q1.5'] : [];
+    const chain: string[] = arm === 'B1-0.5' ? ['q0.5'] : arm === 'B1-1.5' ? ['q1.5'] : arm === 'B3' ? ['q1.5+d0.5'] : arm === 'C1' ? ['q0.5', 'q1.5'] : arm === 'B2-1.5' ? ['q1.5+ng'] : arm === 'C1n' ? ['q0.5+ng', 'q1.5+ng'] : [];
     if (!chain.length) { console.log(`skip ${arm}: no HumanEval coverage`); continue; }
     const ms = await Promise.all(chain.map(async n => new Metered(await server(n))));
     for (const t of tasks) {

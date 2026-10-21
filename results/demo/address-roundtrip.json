@@ -1,0 +1,32 @@
+{
+ "address": "clock9://listops/1.0/map%20square%20%7C%20filter%20even%20%7C%20sum.f84b0e1d",
+ "resolved": {
+  "program": {
+   "stages": [
+    {
+     "op": "map",
+     "fn": {
+      "f": "square"
+     }
+    },
+    {
+     "op": "filter",
+     "pred": {
+      "p": "even"
+     }
+    }
+   ],
+   "terminal": "sum"
+  },
+  "dsl": "map square | filter even | sum",
+  "explain": [
+   "grammar listops/1.0",
+   "stage 1: {\"fn\":{\"f\":\"square\"},\"op\":\"map\"}",
+   "stage 2: {\"op\":\"filter\",\"pred\":{\"p\":\"even\"}}",
+   "terminal: sum",
+   "compiles to 5 lines of Python"
+  ],
+  "effects": "none"
+ },
+ "roundtrip": true
+}
